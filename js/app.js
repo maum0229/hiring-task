@@ -1,16 +1,13 @@
+// FAQ toggle fuction
 const questions = document.querySelectorAll(".question");
 
 questions.forEach((elem) => {
-  elem.addEventListener("click",  () => {
-    let answer = this.nextElementSibling; // Get the next sibling (answer paragraph)
-    let icon = this.querySelector("i"); // Get the icon inside the clicked question
+  elem.addEventListener("click", (event) => {
+    let question = event.currentTarget;
+    let answer = question.nextElementSibling; 
+    let icon = question.querySelector("i");
 
-    if (answer) {
-      answer.classList.toggle("hidden"); // Toggle answer visibility
-    }
-
-    if (icon) {
-      icon.classList.toggle("rotate-180"); // Rotate the icon
-    }
+    answer.classList.toggle("hidden"); 
+    icon.classList.toggle("rotate-180"); 
   });
 });
